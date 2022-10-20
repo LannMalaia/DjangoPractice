@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load static %}
+<h1>Login Page</h1>
+<img src="{% static '/img/test.jpg' %}">
+<form action="/polls/" method="POST">
+    {% csrf_token %}
+    {% comment %}
+    <label for="userid">ID : </label>
+    <input type="text" name="userid" id="userid"> <br><br>
+    <label for="password">PW : </label>
+    <input type="text" name="password" id="password"> <br><br>
+    {% endcomment %}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
+</form>
+</body>
+</html>
